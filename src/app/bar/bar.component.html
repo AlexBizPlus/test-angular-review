@@ -1,11 +1,15 @@
+<!-- semantic violation -->
+<!-- p tag inside a span tag -->
 <span>
   <div>
-      <p class="BigRedClass">bar works!</p>
-      <p class="blue" style="color: tomato !important;">{{ AllElements | json }}</p>
-      <p>
-        <div>
-          {{ mess }}
-        </div>
-      </p>
+    <p class="BigRedClass">bar works!</p>
+    <!-- unnecessary usage "style" and "!important" -->
+    <p class="blue" style="color: tomato !important">
+      {{ AllElements | json }}
+    </p>
+    <!-- https://html.spec.whatwg.org/multipage/parsing.html#closing-elements-that-have-implied-end-tags -->
+    <p>
+      {{ mess }}
+    </p>
   </div>
 </span>

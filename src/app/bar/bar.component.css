@@ -1,3 +1,4 @@
+/* avoid use "global *" */
 * {
   color: blue;
 }
@@ -6,8 +7,14 @@ body p {
   color: green;
 }
 
-.BigRedClass {color:red;font-size:30px}
+/* css class naming */
+/* https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/ */
+.BigRedClass {
+  color: red;
+  font-size: 30px;
+}
 
+/* color is "blue" already, redundant */
 .blue {
   color: blue;
 }

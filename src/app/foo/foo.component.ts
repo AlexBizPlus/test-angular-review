@@ -4,23 +4,24 @@ import { MainService } from '../main.service';
 @Component({
   selector: 'app-foo',
   templateUrl: './foo.component.html',
-  styleUrls: ['./foo.component.css']
+  styleUrls: ['./foo.component.css'],
 })
 export class FooComponent implements OnInit {
   // возвести в квадрат
-  pow(c, count?)
-  {
-    return c * c
+  pow(c, count?) {
+    return c * c;
   }
 
+  // avoid translit
+  // type of "any"
   kolichestvo;
-  constructor(s: MainService)
-  {
-    s.get(10).subscribe(x => this.kolichestvo = x);
+  constructor(s: MainService) {
+    // redundant argument
+    s.get().subscribe((x) => (this.kolichestvo = x));
     this.pow(this.kolichestvo);
   }
-  ngOnInit(): void
-  {
-    console.log(`Кол-во: ` + this.kolichestvo)
+  ngOnInit(): void {
+    // better `Кол-во: ${this.kolichestvo}` or "Кол-во: " + this.kolichestvo
+    console.log(`Кол-во: ` + this.kolichestvo);
   }
 }

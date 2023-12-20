@@ -1,0 +1,13 @@
+* {
+  color: blue;
+}
+
+body p {
+  color: green;
+}
+
+.BigRedClass {color:red;font-size:30px}
+
+.blue {
+  color: blue;
+}
